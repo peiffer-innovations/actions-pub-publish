@@ -19,9 +19,7 @@ runs:
       run: |
         set -e
 
-        cat <<EOF > $PUB_CACHE/credentials.json
-          ${{ inputs.credentials }}
-          EOF
+        printf '${{ inputs.credentials }}' > $PUB_CACHE/credentials.json
 
         pub publish
       working-directory: ${{ inputs.path }}
