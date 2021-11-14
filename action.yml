@@ -19,7 +19,7 @@ runs:
       id: publish
       run: |
         cat <<EOF > $PUB_CACHE/credentials.json
-          ${{ input.credentials }}
+          ${{ inputs.credentials }}
           EOF
 
         pub publish
