@@ -2,10 +2,9 @@
 name: "Publish Dart/Flutter package"
 description: "Publish Dart/Flutter package"
 inputs:
-  channel:
-    description: "(Optional) Flutter / Dart channel to use (default: stable"
-    required: false
-    default: "stable"
+  credentials:
+    description: "Credentials JSON to use"
+    required: true
   path:
     description: '(Optional) Package directory (default: ".")'
     required: false
