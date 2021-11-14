@@ -17,6 +17,8 @@ runs:
       shell: bash
       id: publish
       run: |
+        set -e
+
         cat <<EOF > $PUB_CACHE/credentials.json
           ${{ inputs.credentials }}
           EOF
