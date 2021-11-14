@@ -1,0 +1,26 @@
+# action.yml
+name: "Publish Dart/Flutter package"
+description: "Publish Dart/Flutter package"
+inputs:
+  channel:
+    description: "(Optional) Flutter / Dart channel to use (default: stable"
+    required: false
+    default: "stable"
+  path:
+    description: '(Optional) Package directory (default: ".")'
+    required: false
+    default: "."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Publish
+      shell: bash
+      id: publish
+      run: |
+        cat <<EOF > $PUB_CACHE/credentials.json
+          ${{ input.credentials }}
+          EOF
+
+        pub publish
+      working-directory: ${{ inputs.path }}
