@@ -32,7 +32,7 @@ jobs:
           channel: ${{ inputs.channel }}
 
       - name: Publish
-        uses: peiffer-innovations/actions-pub-publish@v1.0.0
+        uses: peiffer-innovations/actions-pub-publish@v1.0.1
         with:
           credentials: ${{ secrets.CREDENTIALS_JSON }}
 ```
