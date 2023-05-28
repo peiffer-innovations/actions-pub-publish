@@ -19,7 +19,8 @@ runs:
       run: |
         set -e
 
-        printf '${{ inputs.credentials }}' > $PUB_CACHE/credentials.json
+        
+        printf '${{ inputs.credentials }}' > ~/.config/dart/pub-credentials.json
 
         dart pub publish --force
       working-directory: ${{ inputs.path }}
