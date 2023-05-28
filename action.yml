@@ -1,25 +1,27 @@
 # action.yml
-name: "Publish Dart/Flutter package"
-description: "Publish Dart/Flutter package"
+name: 'Publish Dart/Flutter package'
+description: 'Publish Dart/Flutter package'
 inputs:
   credentials:
-    description: "Credentials JSON to use"
+    description: 'Credentials JSON to use'
     required: true
   path:
     description: '(Optional) Package directory (default: ".")'
     required: false
-    default: "."
+    default: '.'
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Publish
       shell: bash
       id: publish
       run: |
-        set -e
+        set +e
+        mkdir ~/.config
+        mkdir ~/.config/dart
 
-        
+        set -e
         printf '${{ inputs.credentials }}' > ~/.config/dart/pub-credentials.json
 
         dart pub publish --force
