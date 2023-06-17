@@ -1,4 +1,4 @@
-# actions-flutter-validate
+# actions-pub-publish
 
 Performs checks against Dart and Flutter code to ensure the package does not have any analysis issues, failed tests, or improperly formatted code (as defined by `dart format`).
 
